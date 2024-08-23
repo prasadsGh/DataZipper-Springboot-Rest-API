@@ -1,6 +1,8 @@
 package com.datazipper.Controller;
 
 
+import com.datazipper.Entity.treeNode;
+import com.datazipper.Service.fileEncryptionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,25 +11,42 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import com.datazipper.Entity.encryptionReturnEntity;
 
 @RestController
 @RequestMapping("/api")
 public class inputFileController {
 
-    @PostMapping("/inputFileUpload")
-    public ResponseEntity<String> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
 
-        if(file.isEmpty()){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please dont upload blank file");
+    private fileEncryptionService encryption;
+
+    public inputFileController(fileEncryptionService encryption) {
+        this.encryption = encryption;
+    }
+
+    @PostMapping("/inputFileUpload")
+    public ResponseEntity<List<treeNode>> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
+        List<treeNode> list = new ArrayList<>();
+
+        if (file.isEmpty()) {
+            return new ResponseEntity<List<treeNode>>(list, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        try{
-            String content =    new String(file.getBytes(), StandardCharsets.UTF_8);
-            return ResponseEntity.ok("File uploaded + content --> "+content);
-        }
-        catch(IOException exception){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while reading the file");
+        try {
+            String content = new String(file.getBytes(), StandardCharsets.UTF_8);
+            Map<Character, Integer> frequencyMap = new HashMap<>();
+            frequencyMap = encryption.mappingChars(content);
+            List<treeNode> entity = encryption.encryptedFileCreation(frequencyMap);
+            return new ResponseEntity<List<treeNode>>(entity, HttpStatus.CREATED);
+        } catch (IOException exception) {
+
+            return new ResponseEntity<List<treeNode>>(list, HttpStatus.BAD_REQUEST);
 
         }
     }
