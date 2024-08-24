@@ -32,21 +32,21 @@ public class inputFileController {
     }
 
     @PostMapping("/inputFileUpload")
-    public ResponseEntity<List<treeNode>> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
-        List<treeNode> list = new ArrayList<>();
+    public ResponseEntity<encryptionReturnEntity> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
+        encryptionReturnEntity errorEntity = new encryptionReturnEntity(null,null);
 
         if (file.isEmpty()) {
-            return new ResponseEntity<List<treeNode>>(list, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<encryptionReturnEntity>(errorEntity, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         try {
             String content = new String(file.getBytes(), StandardCharsets.UTF_8);
             Map<Character, Integer> frequencyMap = new HashMap<>();
             frequencyMap = encryption.mappingChars(content);
-            List<treeNode> entity = encryption.encryptedFileCreation(frequencyMap);
-            return new ResponseEntity<List<treeNode>>(entity, HttpStatus.CREATED);
+            encryptionReturnEntity entity = encryption.encryptedFileCreation(frequencyMap,content);
+            return new ResponseEntity<encryptionReturnEntity>(entity, HttpStatus.CREATED);
         } catch (IOException exception) {
 
-            return new ResponseEntity<List<treeNode>>(list, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(errorEntity, HttpStatus.BAD_REQUEST);
 
         }
     }

@@ -8,11 +8,11 @@ import java.util.List;
 
 
 public class encryptionReturnEntity {
-    //File file;
+    File file;
     List<treeNode> decryptionKey;
 
-    public encryptionReturnEntity( List<treeNode> decryptionKey) {
-        //this.file = file;
+    public encryptionReturnEntity( List<treeNode> decryptionKey,File file) {
+        this.file = file;
         this.decryptionKey = decryptionKey;
     }
 }

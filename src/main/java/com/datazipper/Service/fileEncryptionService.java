@@ -8,5 +8,6 @@ import java.util.Map;
 
 public interface fileEncryptionService {
     Map<Character,Integer> mappingChars(String data);
-    List<treeNode> encryptedFileCreation(Map<Character,Integer> map);
+    encryptionReturnEntity encryptedFileCreation(Map<Character,Integer> map,String data);
+    Map<Character,String> byteCodeCharacter(treeNode node,Map<Character,String> map, String byteCode);
 }
