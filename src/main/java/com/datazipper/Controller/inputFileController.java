@@ -34,84 +34,73 @@ public class inputFileController {
     }
 
     @PostMapping("/inputFileUpload")
-    public ResponseEntity<byte[]> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
-        byte[] tempResponse = null;
+    public ResponseEntity<File> inputFile(@RequestParam("file") MultipartFile file) throws IOException {
+        File tempFile = new File("temp.txt");
         if (file.isEmpty()) {
-            return new ResponseEntity<>(tempResponse, HttpStatus.BAD_REQUEST);
+            System.out.println("inside file empty");
+            return new ResponseEntity<>(tempFile, HttpStatus.BAD_REQUEST);
         }
 
         try {
-
             InputStream inStream = file.getInputStream();
-            int content;
-            StringBuilder fileContent = new StringBuilder();
-            while ((content = inStream.read()) != -1) {
-                fileContent.append((char) content);
-            }
-
             byte[] b = new byte[inStream.available()];
             inStream.read(b);
-
-
-//            OutputStream outStream = new FileOutputStream(dst);
-//            ObjectOutputStream objectOutStream = new ObjectOutputStream(outStream);
             byte[] huffmanBytes = fileEncryptionService.createZip(b);
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);  // For binary file
-            headers.setContentDispositionFormData("attachment", "compressedFile.bin");
-            // Return the file as a downloadable response
+
+
+            System.out.println("huffmanBytes -->"+huffmanBytes);
+            File newFile = new File("output.txt");
+
+            try (FileOutputStream fos = new FileOutputStream(newFile)) {
+                // Write the byte array to the file
+                fos.write(huffmanBytes);
+                System.out.println("Data written to file successfully.");
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing to the file.");
+                e.printStackTrace();
+            }
+
 
             inStream.close();
-            return new ResponseEntity<>(huffmanBytes, headers, HttpStatus.OK);
+            return new ResponseEntity<>(newFile, HttpStatus.OK);
 
             //return new ResponseEntity<>("File got uploaded successfully", HttpStatus.OK);
 
         } catch (IOException e) {
             e.printStackTrace();
-            return new ResponseEntity<>(tempResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+            System.out.println("IOexception");
+            return new ResponseEntity<>(tempFile, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
     @PostMapping("/DecryptFile")
-    public ResponseEntity<byte[]> DecryptFile(@RequestParam("file") MultipartFile file) throws IOException {
-        byte[] tempResponse = null;
+    public ResponseEntity<File> DecryptFile(@RequestParam("file") MultipartFile file) throws IOException {
+        File tempFile = new File("temp.txt");
         if (file.isEmpty()) {
-            return new ResponseEntity<>(tempResponse, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(tempFile, HttpStatus.BAD_REQUEST);
         }
 
         try {
 
             InputStream inStream = file.getInputStream();
-            ObjectInputStream objectInStream = new ObjectInputStream(inStream);
-
+            ObjectInputStream objectInStream = new  ObjectInputStream(inStream);
             byte[] huffmanBytes = (byte[]) objectInStream.readObject();
-            Map<Byte, String> huffmanCodes = (Map<Byte, String>) objectInStream.readObject();
-
+            Map<Byte, String> huffmanCodes =
+                    (Map<Byte, String>) objectInStream.readObject();
+            File newFile = new File("decryptedFile.txt");
             byte[] bytes = fileDecryptionService.decomp(huffmanCodes, huffmanBytes);
-//            OutputStream outStream = new FileOutputStream(dst);
-//            outStream.write(bytes);
-//            inStream.close();
-//            objectInStream.close();
-//            outStream.close();
-            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-            ObjectOutputStream objectOutStream = new ObjectOutputStream(outStream);
-            // Get the serialized data as a byte array
-            byte[] serializedData = outStream.toByteArray();
-
-            // Set headers for the response
-            objectOutStream.close();
+            OutputStream outStream = new FileOutputStream(newFile);
+            outStream.write(bytes);
+            inStream.close();
+            objectInStream.close();
             outStream.close();
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);  // For binary file
-            headers.setContentDispositionFormData("attachment", "compressedFile.bin");  // Name of the file to download
 
-            // Return the file as a downloadable response
-            return new ResponseEntity<>(serializedData, headers, HttpStatus.OK);
-
+            inStream.close();
+            return new ResponseEntity<>(newFile, HttpStatus.OK);
 
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            return new ResponseEntity<>(tempResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(tempFile, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

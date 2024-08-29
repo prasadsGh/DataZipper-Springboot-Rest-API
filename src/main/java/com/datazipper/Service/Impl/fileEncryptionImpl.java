@@ -72,7 +72,7 @@ public class fileEncryptionImpl implements fileEncryption {
             ByteNode lowerByteNode = minHeap.poll();
 
             ByteNode secondLowerByteNode = minHeap.poll();
-            ByteNode parentByteNode = new ByteNode(null,lowerByteNode.frequency + secondLowerByteNode.frequency);
+            ByteNode parentByteNode = new ByteNode((byte)'\0',lowerByteNode.frequency + secondLowerByteNode.frequency);
             minHeap.add(parentByteNode);
         }
 
@@ -96,22 +96,31 @@ public class fileEncryptionImpl implements fileEncryption {
                 huffmap.put(node.data, sb2.toString());
         }
     }
-    private static byte[] zipBytesWithCodes(byte[] bytes, Map<Byte, String> huffCodes) {
-        StringBuilder strBuilder = new StringBuilder();
-        for (byte b : bytes)
-            strBuilder.append(huffCodes.get(b));
+    private static byte[] zipBytesWithCodes(byte[] byteArray, Map<Byte, String> huffmanCodes) throws IOException {
+        StringBuilder encodedData = new StringBuilder();
 
-        int length=(strBuilder.length()+7)/8;
-        byte[] huffCodeBytes = new byte[length];
-        int idx = 0;
-        for (int i = 0; i < strBuilder.length(); i += 8) {
-            String strByte;
-            if (i + 8 > strBuilder.length())
-                strByte = strBuilder.substring(i);
-            else strByte = strBuilder.substring(i, i + 8);
-            huffCodeBytes[idx] = (byte) Integer.parseInt(strByte, 2);
-            idx++;
+        for (byte b : byteArray) {
+            encodedData.append(huffmanCodes.get(b));
         }
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//        while (encodedData.length() % 8 != 0) {
+//            encodedData.append("0");  // Padding with zeros
+//        }
+        int length = ((encodedData.length())/8);
+        byte[] huffCodeBytes = new byte[length];
+        int idx=0;
+        for (int i = 0; i < encodedData.length(); i += 8) {
+            String byteString = encodedData.substring(i, Math.min(i + 8, encodedData.length()));
+            if(byteString.contains("null")){
+                continue;
+            }
+
+            huffCodeBytes[idx]= (byte) Integer.parseInt(byteString, 2);
+            idx++;
+
+        }
+
         return huffCodeBytes;
     }
 }
