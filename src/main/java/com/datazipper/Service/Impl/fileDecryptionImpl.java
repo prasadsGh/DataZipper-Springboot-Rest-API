@@ -3,16 +3,15 @@ package com.datazipper.Service.Impl;
 import com.datazipper.Service.fileDecryption;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 
 @Service
-public class fileDecryptionImpl implements fileDecryption {
+public class fileDecryptionImpl implements fileDecryption{
 
-
-    @Override
-    public byte[] decomp(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
+    public byte[] decomp(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) throws IOException {
         StringBuilder sb1 = new StringBuilder();
         for (int i=0; i<huffmanBytes.length; i++) {
             byte b = huffmanBytes[i];
