@@ -18,6 +18,14 @@ I’m enthusiastic about collaborating with other developers on innovative proje
 
 🔗 If you’re interested in collaborating or discussing exciting new projects, let’s connect!
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+
+<!-- Video Demostration -->
+### Prerequisites
+
+<-- video-->
 
 <!-- GETTING STARTED -->
 ## Getting Started
