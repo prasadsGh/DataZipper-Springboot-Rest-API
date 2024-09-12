@@ -59,7 +59,7 @@ after successful processing, the file with named as [output] will be created at 
 * Encrypted text file
 <br>
 <br>
-  ![encypted text file](/image/decrypted-text-file.png?raw=true)
+  ![encypted text file](/image/decrypted-text-file.png)
 <br>
 <br>
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
