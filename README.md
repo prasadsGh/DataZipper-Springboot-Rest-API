@@ -7,10 +7,6 @@
 * Achieved an approximate 50% reduction in file size after compression. 💾✨
 * More overview about Huffman Encoding : https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/ 
 
-Achieved an approximate 50% reduction in file size after compression. 💾✨
-
-More overview about Huffman Encoding : https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
-
 
 🛠️ Key Highlights:
 File Handling: Implemented file handling mechanism for file upload and file creation and writing decrypted text to the created file.
