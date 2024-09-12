@@ -45,7 +45,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Input File Size
-  ![input file image](/readme images/input File.png)
+  ![input file image](/readme-images/input_File.png)
 
 Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
@@ -72,6 +72,7 @@ as huffman encoding is lossless data compression technique, you will be able to 
 <br>
   ![original input file size.png](/readme images/original input file size.png)
 * Encrypted File Size & Decrypted File Size
+<br>
 encrypted file name - output
 <br>
 decrypted file name - decrypted
