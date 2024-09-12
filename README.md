@@ -71,6 +71,7 @@ as huffman encoding is lossless data compression technique, you will be able to 
 * Original File Size
 <br>
   ![original input file size.png](/Images/original-input-file-size.png)
+<br>
 * Encrypted File Size & Decrypted File Size
 <br>
 encrypted file name - output
@@ -78,7 +79,7 @@ encrypted file name - output
 decrypted file name - decrypted
 <br>
   ![encypted file size and decrypted file size.png](/Images/encypted-file-size-and-decrypted-file-size.png)
-
+<br>
 Note: Give key name as "file" while sending file through postman to the application
 
 
