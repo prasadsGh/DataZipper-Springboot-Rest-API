@@ -59,7 +59,8 @@ after successful processing, the file with named as [output] will be created at 
 * Encrypted text file
 <br>
 <br>
-  ![encypted text file](/image/decrypted-text-file.png)
+  ![Encrypted Text File](https://res.cloudinary.com/dug2s4vie/image/upload/v1726168245/encypted-text-file_hds2mp.png)
+
 <br>
 <br>
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
