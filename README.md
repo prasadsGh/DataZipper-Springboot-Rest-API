@@ -59,7 +59,7 @@ after successful processing, the file with named as [output] will be created at 
 * Encrypted text file
 <br>
 <br>
-  ![encypted text file](https://raw.githubusercontent.com/prasadsGh/DataZipper-Springboot-Rest-API/master/Images/decrypted-text-file.png?raw=true)
+  ![encypted text file](/image/decrypted-text-file.png?raw=true)
 <br>
 <br>
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
