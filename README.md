@@ -53,12 +53,14 @@ Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 http://localhost:8080/api/file/upload
   ![sending input file through postman.png](/Images/sending-input-file-through-postman.png)
 <br>
-![encypted text file.png](/Images/encypted-text-file.png)
 <br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
 * Encrypted text file
+<br>
+<br>
   ![encypted text file.png](/Images/encypted-text-file.png)
-
+<br>
+<br>
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
 http://localhost:8080/api/file/download
 * encrypted file
