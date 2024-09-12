@@ -1,8 +1,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 * Developed REST APIs for encryption and decryption using Huffman Encoding.
 * Achieved an approximate 50% reduction in file size after compression. 💾✨
 * More overview about Huffman Encoding : https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/ 
@@ -48,9 +46,17 @@ Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 http://localhost:8060/api/file/upload
 <br>
 <-- image-->
+<br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
 
-* Send an encrypted text file through postman 
+* Send an encrypted text file through postman to following API on your local machine to decrypt it
+http://localhost:8060/api/file/download
+<br>
+<--image-->
+<br>
+
+after successfull processinf, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
+as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
 
 
 
