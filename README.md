@@ -3,16 +3,27 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Developed REST APIs for encryption and decryption using Huffman Encoding.
+Achieved an approximate 50% reduction in file size after compression. 💾✨
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+More overview about Huffman Encoding : https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
+🛠️ Key Highlights:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+File Handling: Implemented file handling mechanism for file upload and file creation and writing decrypted text to the created file.
 
-Use the `BLANK_README.md` to get started.
+REST APIs: Implemented two APIs : one for encryption and second one for decryption. 
+
+Data Structures: Applied Data structure like min heap for implementing Huffman algorithm .
+
+
+Check out the project on GitHub: DataZipper-Springboot-Rest-API
+
+Watch the demo here: YouTube Demo
+
+This project has been a great experience in applying the Huffman encoding algorithm within a Spring Boot application.
+I’m enthusiastic about collaborating with other developers on innovative projects and exploring new ideas together!
+
+🔗 If you’re interested in collaborating or discussing exciting new projects, let’s connect!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
