@@ -18,7 +18,6 @@ I’m enthusiastic about collaborating with other developers on innovative proje
 
 🔗 If you’re interested in collaborating or discussing exciting new projects, let’s connect!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -35,7 +34,6 @@ This is an example of how to list things you need to use the software and how to
 * IntelliJ
 * Postman
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -72,4 +70,3 @@ X.com[Twitter] - [@Twitter](https://twitter.com/prasad_2301)
 
 <!--Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)-->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
