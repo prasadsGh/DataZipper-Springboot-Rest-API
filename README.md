@@ -9,16 +9,11 @@
 
 
 🛠️ Key Highlights:
-File Handling: Implemented file handling mechanism for file upload and file creation and writing decrypted text to the created file.
+* File Handling: Implemented file handling mechanism for file upload and file creation and writing decrypted text to the created file.
 
-REST APIs: Implemented two APIs : one for encryption and second one for decryption. 
+* REST APIs: Implemented two APIs : one for encryption and second one for decryption. 
 
-Data Structures: Applied Data structure like min heap for implementing Huffman algorithm .
-
-
-Check out the project on GitHub: DataZipper-Springboot-Rest-API
-
-Watch the demo here: YouTube Demo
+* Data Structures: Used Data structures for implementing Huffman algorithm .
 
 This project has been a great experience in applying the Huffman encoding algorithm within a Spring Boot application.
 I’m enthusiastic about collaborating with other developers on innovative projects and exploring new ideas together!
