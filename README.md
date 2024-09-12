@@ -53,7 +53,6 @@ http://localhost:8080/api/file/upload
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
 
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
-<br>
 http://localhost:8080/api/file/download
   <br>
 after successfull processing, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
