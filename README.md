@@ -44,49 +44,21 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-* Input File Size
-  ![input file image](/image/input-File.png)
 
 Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
 * Send a text file through postman to following api on your local machine to encrypt it.
 http://localhost:8080/api/file/upload
-  ![sending input file through postman](/image/sending-input-file-through-postman.png)
-<br>
 <br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
-<br>
-* Encrypted text file
-<br>
-<br>
-  ![Encrypted Text File](https://res.cloudinary.com/dug2s4vie/image/upload/v1726168245/encypted-text-file_hds2mp.png)
 
-<br>
-<br>
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
+<br>
 http://localhost:8080/api/file/download
-* encrypted file
-<br>
-  ![sending encrypte file](/image/sending-encrypte-file.png)
-<br>
-
+  <br>
 after successfull processing, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
 as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
-* Decrypted text file
-  ![decrypted text file](/image/decrypted-text-file.png)
-<br>
-* Original File Size
-<br>
-  ![original input file size](/image/original-input-file-size.png)
-<br>
-* Encrypted File Size & Decrypted File Size
-<br>
-encrypted file name - output
-<br>
-decrypted file name - decrypted
-<br>
-  ![encypted file size and decrypted file size](/image/encypted-file-size-and-decrypted-file-size.png)
-<br>
+
 Note: Give key name as "file" while sending file through postman to the application
 
 
