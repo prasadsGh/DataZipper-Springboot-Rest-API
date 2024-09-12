@@ -58,6 +58,7 @@ http://localhost:8060/api/file/download
 after successfull processinf, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
 as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
 
+Note: Give key name as "file" while sending file through postman to the application
 
 
 
@@ -67,8 +68,8 @@ as huffman encoding is lossless data compression technique, you will be able to 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+X.com[Twitter] - [@Twitter](https://twitter.com/prasad_2301) 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+<!--Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
