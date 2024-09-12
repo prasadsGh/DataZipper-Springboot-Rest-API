@@ -28,7 +28,11 @@ public class fileDecryptionImpl implements fileDecryption{
             boolean flag = true;
             Byte b = null;
             while (flag) {
-                String key = sb1.substring(i, i + count);
+                String key=null;
+
+                key = sb1.substring(i, i + count);
+
+
                 b = map.get(key);
                 if (b == null) count++;
                 else flag = false;
