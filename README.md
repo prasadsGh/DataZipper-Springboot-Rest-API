@@ -51,33 +51,33 @@ Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
 * Send a text file through postman to following api on your local machine to encrypt it.
 http://localhost:8080/api/file/upload
-  ![sending input file through postman.png](/readme images/sending input file through postman.png)
+  ![sending input file through postman.png](/Images/sending-input-file-through-postman.png)
 <br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
 * Encrypted text file
-  ![encypted text file.png](/readme images/encypted text file.png)
+  ![encypted text file.png](/Images/encypted-text-file.png)
 
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
 http://localhost:8080/api/file/download
 <br>
-  ![sending encrypte file.png](/readme images/sending encrypte file.png)
+  ![sending encrypte file.png](/Images/sending-encrypte-file.png)
 <br>
 
 after successfull processing, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
 as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
 * Decrypted text file
-  ![decrypted text file.png](/readme images/decrypted text file.png)
+  ![decrypted text file.png](/Images/decrypted-text-file.png)
 <br>
 * Original File Size
 <br>
-  ![original input file size.png](/readme images/original input file size.png)
+  ![original input file size.png](/Images/original-input-file-size.png)
 * Encrypted File Size & Decrypted File Size
 <br>
 encrypted file name - output
 <br>
 decrypted file name - decrypted
 <br>
-  ![encypted file size and decrypted file size.png](/readme images/encypted file size and decrypted file size.png)
+  ![encypted file size and decrypted file size.png](/Images/encypted-file-size-and-decrypted-file-size.png)
 
 Note: Give key name as "file" while sending file through postman to the application
 
