@@ -59,6 +59,7 @@ after successful processing, the file with named as [output] will be created at 
 
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
 http://localhost:8080/api/file/download
+* encrypted file
 <br>
   ![sending encrypte file.png](/Images/sending-encrypte-file.png)
 <br>
