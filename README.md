@@ -45,7 +45,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Input File Size
-  ![input file image](/readme-images/input_File.png)
+  ![input file image](/Images/input-File.png)
 
 Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
