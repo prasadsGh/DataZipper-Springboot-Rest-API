@@ -45,13 +45,13 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Input File Size
-  ![input file image](/Images/input-File.png)
+  ![input file image](/images/input-File.png)
 
 Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
 * Send a text file through postman to following api on your local machine to encrypt it.
 http://localhost:8080/api/file/upload
-  ![sending input file through postman](/Images/sending-input-file-through-postman.png)
+  ![sending input file through postman](/images/sending-input-file-through-postman.png)
 <br>
 <br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
@@ -66,17 +66,17 @@ after successful processing, the file with named as [output] will be created at 
 http://localhost:8080/api/file/download
 * encrypted file
 <br>
-  ![sending encrypte file](/Images/sending-encrypte-file.png)
+  ![sending encrypte file](/images/sending-encrypte-file.png)
 <br>
 
 after successfull processing, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
 as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
 * Decrypted text file
-  ![decrypted text file](/Images/decrypted-text-file.png)
+  ![decrypted text file](/images/decrypted-text-file.png)
 <br>
 * Original File Size
 <br>
-  ![original input file size](/Images/original-input-file-size.png)
+  ![original input file size](/images/original-input-file-size.png)
 <br>
 * Encrypted File Size & Decrypted File Size
 <br>
@@ -84,7 +84,7 @@ encrypted file name - output
 <br>
 decrypted file name - decrypted
 <br>
-  ![encypted file size and decrypted file size](/Images/encypted-file-size-and-decrypted-file-size.png)
+  ![encypted file size and decrypted file size](/images/encypted-file-size-and-decrypted-file-size.png)
 <br>
 Note: Give key name as "file" while sending file through postman to the application
 
