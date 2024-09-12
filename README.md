@@ -49,12 +49,11 @@ Start Spring Boot Application in IntelliJ (or Any other your favourite IDE)
 
 * Send a text file through postman to following api on your local machine to encrypt it.
 http://localhost:8080/api/file/upload
-<br>
 after successful processing, the file with named as [output] will be created at your project folder, this [output] file is the encrypted/compressed file.
+<br>
 
 * Send an encrypted text file through postman to following API on your local machine to decrypt it.
 http://localhost:8080/api/file/download
-  <br>
 after successfull processing, the file named with [decrypyted.txt] will be created at your project folder along with all the  text inside it as the original one.
 as huffman encoding is lossless data compression technique, you will be able to find exact same data in [ decrypted.txt] as the original text file.
 
